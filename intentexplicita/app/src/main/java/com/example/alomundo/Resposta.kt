@@ -1,5 +1,6 @@
 package com.example.alomundo
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Text
 
 class Resposta : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resposta)
@@ -32,6 +34,12 @@ class Resposta : AppCompatActivity() {
         findViewById<Button>(R.id.button_github).setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://github.com/BernardoMGG/devmobile2026.1"))
+            startActivity(intent)
+        }
+
+        var buttonVoltar = findViewById<Button>(R.id.buttonVoltar)
+        buttonVoltar.setOnClickListener {
+            val intent = Intent(this, Comecar::class.java)
             startActivity(intent)
         }
     }
