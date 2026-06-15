@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="#121212">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sua Rotina e Preferências"
+        android:textColor="#DEFF9A"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rotina Alimentar:"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="4dp"/>
+
+    <Spinner
+        android:id="@+id/spDiet"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#DEFF9A"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Qual tipo de atividade você prefere?"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="4dp"/>
+
+    <Spinner
+        android:id="@+id/spPreference"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#DEFF9A"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dias de exercício por semana:"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+
+        <RadioButton
+            android:id="@+id/rbSedentario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 a 2 dias (Sedentário/Leve)"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#DEFF9A"/>
+
+        <RadioButton
+            android:id="@+id/rbModerado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 a 4 dias (Moderado)"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#DEFF9A"/>
+
+        <RadioButton
+            android:id="@+id/rbIntenso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5+ dias (Intenso)"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#DEFF9A"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="CALCULAR RESULTADO"
+        android:backgroundTint="#DEFF9A"
+        android:textColor="#121212"
+        android:textStyle="bold"/>
+
+</LinearLayout>

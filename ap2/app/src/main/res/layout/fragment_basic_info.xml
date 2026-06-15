@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Suas Informações"
+        android:textColor="#DEFF9A"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/etNomeCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Nome Completo"
+        android:inputType="textPersonName"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#DEFF9A"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etAltura"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Altura (ex: 1.75)"
+        android:inputType="numberDecimal"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#DEFF9A"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etPesoAtual"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Peso Atual (kg)"
+        android:inputType="numberDecimal"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#DEFF9A"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etPesoDesejado"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Peso Desejado (kg)"
+        android:inputType="numberDecimal"
+        android:textColorHint="#888888"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#DEFF9A"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnProximo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="PRÓXIMO PASSO"
+        android:backgroundTint="#DEFF9A"
+        android:textColor="#121212"
+        android:textStyle="bold"/>
+
+</LinearLayout>

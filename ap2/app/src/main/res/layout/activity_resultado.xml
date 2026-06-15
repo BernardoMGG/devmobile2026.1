@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#121212">
+
+    <TextView
+        android:id="@+id/tvTituloPlano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seu Plano MetaFit"
+        android:textColor="#DEFF9A"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#1A1A1A"
+        xmlns:app="http://schemas.getandroid.com/apk/res-auto"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meta: Calculando..."
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tvDias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tempo: Z dias"
+                android:textColor="#DEFF9A"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tvCalorias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Déficit Diário: 500 kcal"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#333333"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Foco Recomendado de Exercícios:"
+                android:textColor="#DEFF9A"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvRecomendacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buscando melhor treino para seu perfil..."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:lineSpacingMultiplier="1.2"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="SALVAR NO BANCO DE DADOS"
+        android:backgroundTint="#DEFF9A"
+        android:textColor="#121212"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnCompartilhar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="COMPARTILHAR RESULTADO"
+        android:backgroundTint="#333333"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+</LinearLayout>
