@@ -1,11 +1,15 @@
 package com.example.metafit
 
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
-import retrofit2.Call
+import retrofit2.create
+import retrofit2.http.DELETE
+import retrofit2.http.PUT
+import retrofit2.http.Path
 
 data class FitnessPlan(
     val id: Int? = null,
@@ -20,22 +24,26 @@ data class FitnessPlan(
     val calorias_meta: Double
 )
 
-interface FitnessApi {
+interface ApiService {
     @POST("planos")
     fun savePlan(@Body plan: FitnessPlan): Call<FitnessPlan>
 
     @GET("planos")
     fun getPlans(): Call<List<FitnessPlan>>
+
+    @PUT("planos/{nome}")
+    fun updatePlan(@Path("nome") nome: String, @Body plan: FitnessPlan): Call<FitnessPlan>
+
+    @DELETE("planos/{nome}")
+    fun deletePlan(@Path("nome") nome: String): Call<Void>
 }
 
 object RetrofitClient {
     private const val BASE_URL = "http://10.0.2.2:8000/"
 
-    val instance: FitnessApi by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(FitnessApi::class.java)
-    }
+    val instance: ApiService = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create<ApiService>()
 }

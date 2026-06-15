@@ -35,7 +35,7 @@ class BasicInfoFragment : Fragment() {
 
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainer, routineFragment)
-                .addToBackStack(null) // Permite usar o botão "Voltar" do celular
+                .addToBackStack(null)
                 .commit()
         }
 

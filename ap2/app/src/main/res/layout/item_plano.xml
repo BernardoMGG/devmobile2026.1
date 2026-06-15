@@ -41,5 +41,15 @@
             android:textSize="14sp"
             android:layout_marginTop="4dp"/>
 
+        <Button
+            android:id="@+id/btnDeletarItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="EXCLUIR PLANO"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"/>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

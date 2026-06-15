@@ -89,7 +89,7 @@ class ResultadoActivity : AppCompatActivity() {
             RetrofitClient.instance.savePlan(plano).enqueue(object : Callback<FitnessPlan> {
                 override fun onResponse(call: Call<FitnessPlan>, response: Response<FitnessPlan>) {
                     if (response.isSuccessful) {
-                        Toast.makeText(this@ResultadoActivity, "Plano estruturado e persistido no SQLite!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@ResultadoActivity, "Plano salvo no Banco de Dados!", Toast.LENGTH_LONG).show()
 
                         val intentVoltar = Intent(this@ResultadoActivity, MainActivity::class.java)
                         intentVoltar.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

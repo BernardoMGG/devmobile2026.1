@@ -13,13 +13,11 @@ class MainActivity : AppCompatActivity() {
         val btnComecar = findViewById<Button>(R.id.btnComecar)
         val btnHistorico = findViewById<Button>(R.id.btnHistorico) // Resgatando o novo botão
 
-        // Ação para começar o formulário
         btnComecar.setOnClickListener {
             val intent = Intent(this, QuestionarioActivity::class.java)
             startActivity(intent)
         }
 
-        // Ação para abrir a lista do banco de dados
         btnHistorico.setOnClickListener {
             val intent = Intent(this, HistoricoActivity::class.java)
             startActivity(intent)

@@ -2,12 +2,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
 import sqlite3
+from fastapi import HTTPException
 
 app = FastAPI(title="MetaFit API")
 
 class FitnessPlan(BaseModel):
     id: int = None
-    nome_completo: str # <-- NOVO CAMPO AQUI
+    nome_completo: str 
     altura: float
     peso_atual: float
     peso_desejado: float
@@ -56,3 +57,39 @@ def get_plans():
     return [FitnessPlan(id=r[0], nome_completo=r[1], altura=r[2], peso_atual=r[3], peso_desejado=r[4], 
                         rotina_alimentar=r[5], perfil_treino=r[6], dias_exercicio=r[7], 
                         resultado_dias=r[8], calorias_meta=r[9]) for r in rows]
+
+@app.put("/planos/{nome}")
+def atualizar_plano(nome: str, plano_atualizado: FitnessPlan):
+    cursor.execute("""
+        UPDATE planos SET 
+        nome_completo = ?, altura = ?, peso_atual = ?, peso_desejado = ?, 
+        rotina_alimentar = ?, perfil_treino = ?, dias_exercicio = ?, 
+        resultado_dias = ?, calorias_meta = ?
+        WHERE nome_completo = ?
+    """, (
+        plano_atualizado.nome_completo, 
+        plano_atualizado.altura, 
+        plano_atualizado.peso_atual, 
+        plano_atualizado.peso_desejado, 
+        plano_atualizado.rotina_alimentar, 
+        plano_atualizado.perfil_treino, 
+        plano_atualizado.dias_exercicio, 
+        plano_atualizado.resultado_dias, 
+        plano_atualizado.calorias_meta, 
+        nome
+    ))
+    conn.commit()
+    
+    return {"mensagem": f"Plano de {nome} foi atualizado com sucesso!", "dados": plano_atualizado}
+
+@app.delete("/planos/{nome}")
+def deletar_plano(nome: str):
+    conn = sqlite3.connect("metafit.db") 
+    cursor = conn.cursor()
+    
+    cursor.execute("DELETE FROM planos WHERE nome_completo = ?", (nome,))
+    conn.commit()
+    
+    conn.close()
+    
+    return {"mensagem": f"Plano de {nome} foi deletado com sucesso!"}
